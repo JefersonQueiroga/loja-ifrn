@@ -1,0 +1,47 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+h1 {
+  color: #1565C0;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.contador {
+  text-align: center;
+  margin: 12px 0;
+  font-weight: bold;
+  color: #0D47A1;
+}
+
+.vazio {
+  text-align: center;
+  padding: 24px;
+  color: #777;
+}
+
+.busca {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.erro-busca {
+  text-align: center;
+  color: #b71c1c;
+  margin-bottom: 12px;
+}
