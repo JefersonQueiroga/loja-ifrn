@@ -136,33 +136,6 @@ Por isso o `map` daqui é mais curto: não precisa daquele `pokemon.url.split('/
 
 ---
 
-## Problemas comuns
-
-### `npm : O arquivo não pode ser carregado porque a execução de scripts foi desabilitada`
-
-Esse erro só acontece no **PowerShell**. Duas saídas:
-
-1. **Mais simples:** use o **Prompt de Comando (cmd)** em vez do PowerShell.
-2. Ou abra o **PowerShell como Administrador** e rode:
-
-```powershell
-Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
-```
-
-### `Port 5173 is already in use`
-
-Já tem um `npm run dev` rodando em outro terminal. Feche o outro, ou use a porta que o Vite sugerir (ele sobe na 5174 sozinho).
-
-### A página abre mas fica em branco / sem produtos
-
-O projeto busca os dados na internet. Confira sua conexão e abra o **DevTools** (`F12`), aba **Console**, para ver a mensagem de erro.
-
-### Caminho com espaços ou acentos
-
-Evite pastas com acentos ou `ç`. Prefira algo como `C:\Users\SeuNome\Documents\projetos`.
-
----
-
 ## Links úteis
 
 - [Documentação do React (em português)](https://pt-br.react.dev)
