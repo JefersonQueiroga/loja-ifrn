@@ -6,6 +6,8 @@ function App() {
   const [lista, setLista] = useState([])
 
   useEffect(() => {
+    // O array vazio [] diz pro React: rode este efeito so uma vez,
+    // quando o componente for montado (sem isso, rodaria a cada render).
     fetch('https://dummyjson.com/products?limit=20')
       .then((resposta) => resposta.json())
       .then((dados) => setLista(dados.products))
