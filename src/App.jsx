@@ -8,9 +8,17 @@ function App() {
   useEffect(() => {
     // O array vazio [] diz pro React: rode este efeito so uma vez,
     // quando o componente for montado (sem isso, rodaria a cada render).
-    fetch('https://dummyjson.com/products?limit=20')
-      .then((resposta) => resposta.json())
-      .then((dados) => setLista(dados.products))
+
+    // A funcao do useEffect nao pode ser "async" diretamente (o React espera
+    // que ela devolva nada ou uma funcao de limpeza, nunca uma Promise).
+    // Por isso criamos uma funcao async aqui dentro e so chamamos ela em seguida.
+    async function buscarProdutos() {
+      const resposta = await fetch('https://dummyjson.com/products?limit=20')
+      const dados = await resposta.json()
+      setLista(dados.products)
+    }
+
+    buscarProdutos()
   }, [])
 
   return (
