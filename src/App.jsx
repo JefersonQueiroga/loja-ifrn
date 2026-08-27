@@ -5,12 +5,13 @@ import './App.css'
 function App() {
   const [lista, setLista] = useState([])
 
-  function buscarProdutos() {
-    // fetch devolve uma Promise: os dados nao chegam na hora.
-    // O primeiro .then() transforma a resposta em JSON, o segundo guarda no estado.
-    fetch('https://dummyjson.com/products?limit=20')
-      .then((resposta) => resposta.json())
-      .then((dados) => setLista(dados.products))
+  // fetch devolve uma Promise: os dados nao chegam na hora.
+  // async/await e so uma forma mais facil de ler a mesma coisa que .then().then():
+  // o "await" pausa a funcao ate a Promise terminar, sem precisar encadear .then().
+  async function buscarProdutos() {
+    const resposta = await fetch('https://dummyjson.com/products?limit=20')
+    const dados = await resposta.json()
+    setLista(dados.products)
   }
 
   return (
